@@ -1,21 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+body{
+  background-color: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Light.ttf') format('truetype');
+  font-weight: 300;  /* Lighter weight for 'light' font */
+  font-style: normal;
+}
+
+.nohemi-font {
+  font-family: 'Nohemi', sans-serif;
+}
+
+.nohemi-light-font {
+  font-family: 'Nohemi', sans-serif;
+  font-weight: 300;  /* Apply light font */
+}
+
+.orbitron-font {
+  font-family: "Orbitron", serif;
+  font-optical-sizing: auto;
+}
+
+.bg{
+  background-image: url("../public/images/bg3.jpg");
+  background-size:contain;
+}
+
+.title-background {
+  font-size: 8rem; 
+  font-weight: bold; 
+  background-image: url('/images/fest-bg.jpg'); 
+  background-size: cover; 
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent; 
+  display: inline-block;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #32cd32, 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 30px #00ff00;
+}
+
+/* Bounce animation for tagline */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-bounce {
+  animation: bounce 2s infinite;
 }
